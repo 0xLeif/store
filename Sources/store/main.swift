@@ -13,7 +13,7 @@ struct Store: ParsableCommand {
     
     mutating func run() throws {
         if get {
-            guard let storedValue = UserDefaults.standard.value(forKey: name) else {
+            guard let storedValue = UserDefaults.standard.string(forKey: name) else {
                 print("No value stored for Key '\(name)'")
                 return
             }
